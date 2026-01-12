@@ -1,5 +1,6 @@
 import { getPaginatedPostsByCategory } from '@/lib/api';
 import Link from 'next/link';
+import { getSecureImageUrl } from '@/lib/utils';
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic';
@@ -113,7 +114,7 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
                         <div className="w-full md:w-80 h-52 flex-shrink-0 overflow-hidden bg-gray-100 relative">
                              {item.image ? (
                                 <img 
-                                    src={item.image} 
+                                    src={getSecureImageUrl(item.image)} 
                                     alt={item.title} 
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                                 />
