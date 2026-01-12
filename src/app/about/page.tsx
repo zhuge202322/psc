@@ -1,5 +1,6 @@
 import { getPageBySlug } from '@/lib/api';
 import TeamGallery from '@/components/ui/TeamGallery';
+import { getSecureImageUrl } from '@/lib/utils';
 
 export const dynamic = 'force-dynamic';
 
