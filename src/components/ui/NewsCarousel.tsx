@@ -51,7 +51,7 @@ export default function NewsCarousel({ posts }: NewsCarouselProps) {
                 <div className="relative h-[280px] w-full overflow-hidden mb-6">
                     {post._embedded?.['wp:featuredmedia']?.[0]?.source_url ? (
                         <img 
-                            src={post._embedded['wp:featuredmedia'][0].source_url} 
+                            src={getSecureImageUrl(post._embedded['wp:featuredmedia'][0].source_url)} 
                             alt={post.title.rendered}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />

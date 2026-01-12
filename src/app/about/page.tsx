@@ -26,7 +26,7 @@ export default async function AboutPage() {
       <div className="relative py-32 md:py-48 bg-gray-900 border-b border-gray-800 overflow-hidden">
         <div className="absolute inset-0 z-0">
             <img 
-                src={image} 
+                src={getSecureImageUrl(image)} 
                 alt="About Background" 
                 className="w-full h-full object-cover opacity-50"
             />

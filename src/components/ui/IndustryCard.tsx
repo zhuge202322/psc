@@ -24,7 +24,7 @@ export default function IndustryCard({ id, postId, title, name, desc, image }: I
       {/* 背景图片层 */}
       <div className="absolute inset-0 z-0">
         <img 
-            src={image} 
+            src={getSecureImageUrl(image)} 
             alt={name} 
             className={`w-full h-full object-cover transition-transform duration-700 ${isHovered ? 'scale-110 blur-sm' : 'scale-100'}`} 
         />

@@ -69,7 +69,7 @@ export default function SolutionItem({ item, index }: SolutionItemProps) {
             {/* Inner Floating Card or Featured Image */}
             {item.image ? (
                  <img 
-                    src={item.image} 
+                    src={getSecureImageUrl(item.image)} 
                     alt={item.title} 
                     className="absolute inset-0 w-full h-full object-cover z-20 transform transition-transform hover:scale-105 duration-700"
                  />
