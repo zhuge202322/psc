@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'http://45.145.229.20:2030/wp-json';
 
 export const wpApi = axios.create({
   baseURL: API_URL,
