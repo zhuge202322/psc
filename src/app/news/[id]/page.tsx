@@ -1,6 +1,7 @@
 import { getPost } from '@/lib/api';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { getSecureImageUrl } from '@/lib/utils';
 
 export const dynamic = 'force-dynamic';
 
@@ -71,7 +72,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ id: st
         {image && (
           <div className="mb-16 rounded-3xl overflow-hidden shadow-2xl relative aspect-video">
             <img 
-              src={image} 
+              src={getSecureImageUrl(image)} 
               alt={post.title.rendered}
               className="w-full h-full object-cover"
             />
