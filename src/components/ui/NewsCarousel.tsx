@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { WPPost } from '@/types/wordpress';
 import { useEffect, useState } from 'react';
+import { getSecureImageUrl } from '@/lib/utils';
 
 interface NewsCarouselProps {
   posts: WPPost[];
