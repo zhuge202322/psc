@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { getSecureImageUrl } from '@/lib/utils';
 
 interface IndustryProps {
   id: string;
@@ -21,28 +22,28 @@ export default function IndustryCard({ id, postId, title, name, desc, image }: I
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* 背景图片层 */}
+      {/* 背景图片�?*/}
       <div className="absolute inset-0 z-0">
         <img 
             src={getSecureImageUrl(image)} 
             alt={name} 
             className={`w-full h-full object-cover transition-transform duration-700 ${isHovered ? 'scale-110 blur-sm' : 'scale-100'}`} 
         />
-        {/* 遮罩层：默认有一点遮罩确保文字可读，悬停时加深 */}
+        {/* 遮罩层：默认有一点遮罩确保文字可读，悬停时加�?*/}
         <div className={`absolute inset-0 bg-black transition-opacity duration-500 ${isHovered ? 'opacity-80' : 'opacity-40'}`} />
       </div>
 
-      {/* 默认内容 (悬停时隐藏/淡出) */}
+      {/* 默认内容 (悬停时隐�?淡出) */}
       <div className={`absolute inset-0 z-10 transition-all duration-500 ${isHovered ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-        <div className="h-full flex items-center justify-between px-10 border-2 border-white/20 rounded-[2rem] m-2"> {/* 加了 margin 模拟内边框 */}
+        <div className="h-full flex items-center justify-between px-10 border-2 border-white/20 rounded-[2rem] m-2"> {/* 加了 margin 模拟内边�?*/}
           
-          {/* 左侧：ID 和 英文标题 */}
+          {/* 左侧：ID �?英文标题 */}
           <div className="flex flex-col gap-2 w-1/4">
             <span className="text-white/80 font-mono text-2xl font-light">{id}</span>
             <span className="text-teal-400 font-bold tracking-widest text-xs uppercase opacity-90">{title}</span>
           </div>
 
-          {/* 中间：中文名称 */}
+          {/* 中间：中文名�?*/}
           <div className="flex-grow flex items-center gap-4">
              <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform duration-500 border border-white/20">
                 <span className="text-2xl text-white font-bold">{name[0]}</span>
@@ -64,13 +65,13 @@ export default function IndustryCard({ id, postId, title, name, desc, image }: I
         </div>
       </div>
 
-      {/* 悬停内容 (悬停时显示) */}
+      {/* 悬停内容 (悬停时显�? */}
       <div 
         className={`absolute inset-0 z-20 px-12 flex items-center justify-between transition-all duration-500 ease-out ${
           isHovered ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
-        {/* 左侧：标题信息 */}
+        {/* 左侧：标题信�?*/}
         <div className="w-1/3 border-r border-white/20 pr-8">
             <span className="text-teal-400 font-bold tracking-widest text-xs uppercase mb-2 block">{title}</span>
             <h3 className="text-3xl font-bold text-white mb-2">
@@ -79,14 +80,14 @@ export default function IndustryCard({ id, postId, title, name, desc, image }: I
             <div className="w-10 h-1 bg-teal-500 rounded-full" />
         </div>
 
-        {/* 中间：描述 */}
+        {/* 中间：描�?*/}
         <div className="w-1/2 px-8">
             <p className="text-gray-200 leading-relaxed text-sm">
             {desc}
             </p>
         </div>
 
-        {/* 右侧：按钮 */}
+        {/* 右侧：按�?*/}
         <div className="w-auto flex-shrink-0">
             <Link 
             href={`/solutions/${postId || id}`} 

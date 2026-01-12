@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { getSecureImageUrl } from '@/lib/utils';
 
 interface SolutionItemProps {
   item: {
