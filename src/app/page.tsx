@@ -7,9 +7,9 @@ import NewsCarousel from '@/components/ui/NewsCarousel';
 
 // Fallback data in case API fails or is empty
 const STATIC_INDUSTRIES = [
-  { id: '01', title: 'Consumer Electronics', name: '消费电子', desc: '针对高价值、短周期的电子产品，提供高安保标准的端到端物流方案，确保新品发布的时效性。', image: '/img/1.png' },
-  { id: '02', title: 'Automotive Parts', name: '汽车配件', desc: '优化的零部件供应链网络，支持 JIT (Just-In-Time) 生产模式，降低库存成本，提升周转效率。', image: '/img/1.png' },
-  { id: '03', title: 'New Energy', name: '新能源', desc: '专业的锂电池及光伏组件运输方案，符合 DG 危险品运输规范，提供全球合规的仓储与配送。', image: '/img/1.png' },
+  { id: '01', title: 'Consumer Electronics', name: 'Consumer Electronics', desc: 'End-to-end logistics with high security standards for high-value, short-cycle electronic products.', image: '/img/1.png' },
+  { id: '02', title: 'Automotive Parts', name: 'Automotive Parts', desc: 'Optimized supply chain network supporting JIT production, reducing inventory costs and improving turnover.', image: '/img/1.png' },
+  { id: '03', title: 'New Energy', name: 'New Energy', desc: 'Professional transport for lithium batteries and PV modules, compliant with DG regulations.', image: '/img/1.png' },
 ];
 
 export default async function Home() {
@@ -118,18 +118,18 @@ export default async function Home() {
     } else {
         // Fallback static services if no posts found
         displayServices = [
-            { title: '1688价格分析', desc: '快速可靠地选择工厂，以及为你的企业提供最优惠的价格。', icon: '🔍' },
-            { title: '交钥匙采购', desc: '全面采购支持：谈判、控制和订购。', icon: '🛍️' },
-            { title: '交钥匙项目', desc: '建筑、室内和材料供应的完整解决方案。', icon: '🏗️' },
-            { title: '展览中的代表', desc: '参观中国展览，收集数据并准备报告。', icon: '🎫' },
-            { title: '质量控制', desc: '生产检验、集装箱检验和合规控制。', icon: '🛡️' },
-            { title: '中国商务访问', desc: '组织商务访问、展览及与供应商的会面。', icon: '🤝' },
-            { title: '中亚和俄罗斯的后勤', desc: '选择可靠的承运人并支持货运。', icon: '🚚' },
+            { title: '1688 Price Analysis', desc: 'Fast and reliable factory selection and best price negotiation.', icon: '🔍' },
+            { title: 'Turnkey Sourcing', desc: 'Comprehensive sourcing support: negotiation, control, and ordering.', icon: '🛍️' },
+            { title: 'Turnkey Projects', desc: 'Complete solutions for construction, interiors, and material supply.', icon: '🏗️' },
+            { title: 'Exhibition Representation', desc: 'Visit Chinese exhibitions, collect data, and prepare reports.', icon: '🎫' },
+            { title: 'Quality Control', desc: 'Production inspection, container loading check, and compliance control.', icon: '🛡️' },
+            { title: 'China Business Visit', desc: 'Organize business visits, exhibitions, and supplier meetings.', icon: '🤝' },
+            { title: 'Central Asia & Russia Logistics', desc: 'Selecting reliable carriers and freight support.', icon: '🚚' },
         ];
     }
     
     // Always append "More+" button
-    displayServices.push({ title: '更多+', desc: '了解更多信息', icon: '', isMore: true });
+    displayServices.push({ title: 'More+', desc: 'Learn more information', icon: '', isMore: true });
 
   } catch (error) {
     console.error('Failed to fetch data:', error);
@@ -160,10 +160,10 @@ export default async function Home() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12 md:mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6">行业解决方案</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6">Industry Solutions</h2>
             <div className="w-16 md:w-20 h-1 bg-teal-500 mx-auto" />
             <p className="mt-4 md:mt-6 text-gray-500 max-w-2xl mx-auto text-base md:text-lg">
-              深耕细分领域，为您提供量身定制的端到端供应链管理服务
+              Tailored supply chain strategies for the unique demands of your specific market.
             </p>
           </div>
 
@@ -187,7 +187,7 @@ export default async function Home() {
         
         <div className="container mx-auto px-4 relative z-10">
             <div className="mb-10 md:mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">我们的服务</h2>
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Our Services</h2>
                 <div className="w-16 md:w-20 h-1 bg-yellow-400" />
             </div>
 
@@ -259,47 +259,47 @@ export default async function Home() {
             {/* 表单主体 */}
             <div className="w-full lg:w-2/3 max-w-4xl">
               <div className="mb-10 md:mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold text-black mb-4 md:mb-6 tracking-tight">联系我们</h2>
+                <h2 className="text-3xl md:text-5xl font-bold text-black mb-4 md:mb-6 tracking-tight">Contact Us</h2>
                 <div className="w-16 h-1 bg-purple-600 mb-6" />
-                <p className="text-lg md:text-xl text-gray-600">我们始终保持联系——只需留言即可。</p>
+                <p className="text-lg md:text-xl text-gray-600">We are always in touch — just leave a message.</p>
               </div>
 
               <form className="space-y-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
                   {/* Name */}
                   <div className="group relative">
-                    <input type="text" placeholder="姓名 *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 group-hover:border-gray-400" />
+                    <input type="text" placeholder="Name *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 group-hover:border-gray-400" />
                   </div>
                   {/* Company */}
                   <div className="group relative">
-                    <input type="text" placeholder="公司 *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 group-hover:border-gray-400" />
+                    <input type="text" placeholder="Company *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 group-hover:border-gray-400" />
                   </div>
                   {/* Location */}
                   <div className="group relative">
-                    <input type="text" placeholder="位置 *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 group-hover:border-gray-400" />
+                    <input type="text" placeholder="Location *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 group-hover:border-gray-400" />
                   </div>
                   {/* Email */}
                   <div className="group relative">
-                    <input type="email" placeholder="电子邮件 *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 group-hover:border-gray-400" />
+                    <input type="email" placeholder="Email *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 group-hover:border-gray-400" />
                   </div>
                   {/* Phone */}
                   <div className="group relative">
-                    <input type="tel" placeholder="联系电话 *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 group-hover:border-gray-400" />
+                    <input type="tel" placeholder="Phone *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 group-hover:border-gray-400" />
                   </div>
                   {/* Service */}
                   <div className="group relative">
-                    <input type="text" placeholder="期望服务 *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 group-hover:border-gray-400" />
+                    <input type="text" placeholder="Service Interest *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 group-hover:border-gray-400" />
                   </div>
                 </div>
                 
                 {/* Requirements */}
                 <div className="group relative mt-4">
-                  <textarea rows={4} placeholder="产品采购需求 *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 resize-none group-hover:border-gray-400" />
+                  <textarea rows={4} placeholder="Product Sourcing Requirements *" className="w-full border-b border-gray-300 py-4 text-lg focus:border-purple-600 outline-none transition-colors bg-transparent placeholder-gray-400 resize-none group-hover:border-gray-400" />
                 </div>
 
                 <div className="pt-8">
                   <button type="button" className="px-12 py-5 bg-black text-white text-lg font-bold rounded-full hover:bg-purple-600 transition-all duration-300 shadow-xl hover:shadow-purple-600/30 flex items-center gap-3 transform hover:-translate-y-1">
-                    发送留言
+                    Send Message
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                   </button>
                 </div>
@@ -314,11 +314,11 @@ export default async function Home() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">行业洞察</h2>
-              <p className="text-gray-500">掌握最新物流动态与供应链趋势</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Industry Insights</h2>
+              <p className="text-gray-500">Stay updated with the latest logistics trends and supply chain insights.</p>
             </div>
             <Link href="/news" className="text-blue-600 font-semibold hover:text-blue-700 transition">
-              查看全部资讯 →
+              View All News →
             </Link>
           </div>
           

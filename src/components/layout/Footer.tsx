@@ -15,7 +15,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 leading-relaxed mb-6">
-              专注于提供全球端到端供应链管理服务，助力企业实现高效、透明、合规的物流运作。
+              Focusing on providing global end-to-end supply chain management services, helping enterprises achieve efficient, transparent, and compliant logistics operations.
             </p>
             <div className="flex gap-4">
               {['twitter', 'facebook', 'linkedin', 'instagram'].map((social) => (
@@ -33,15 +33,15 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">快速链接</h3>
+            <h3 className="text-lg font-bold mb-6 text-white">Quick Links</h3>
             <ul className="space-y-4">
               {[
-                { name: '首页', href: '/' },
-                { name: '关于我们', href: '/about' },
-                { name: '服务项目', href: '/services' },
-                { name: '行业案例', href: '/cases' },
-                { name: '新闻资讯', href: '/news' },
-                { name: '联系我们', href: '/contact' },
+                { name: 'Home', href: '/' },
+                { name: 'About', href: '/about' },
+                { name: 'Services', href: '/services' },
+                { name: 'Cases', href: '/cases' },
+                { name: 'News', href: '/news' },
+                { name: 'Contact', href: '/contact' },
               ].map((link) => (
                 <li key={link.name}>
                   <Link 
@@ -58,15 +58,15 @@ export default function Footer() {
 
           {/* Column 3: Services */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">核心服务</h3>
+            <h3 className="text-lg font-bold mb-6 text-white">Core Services</h3>
             <ul className="space-y-4">
               {[
-                '供应链管理',
-                '全球物流',
-                '仓储配送',
-                '关务咨询',
-                '采购执行',
-                'IT 系统集成',
+                'Supply Chain Management',
+                'Global Logistics',
+                'Warehousing & Distribution',
+                'Customs Consulting',
+                'Procurement Execution',
+                'IT Systems Integration',
               ].map((service) => (
                 <li key={service}>
                   <Link href="/services" className="text-gray-400 hover:text-teal-400 transition-colors">
@@ -79,7 +79,7 @@ export default function Footer() {
 
           {/* Column 4: Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">联系方式</h3>
+            <h3 className="text-lg font-bold mb-6 text-white">Contact Info</h3>
             <ul className="space-y-6">
               <li className="flex gap-4">
                 <div className="w-6 h-6 rounded bg-teal-500/10 flex items-center justify-center flex-shrink-0 text-teal-500 mt-1">
@@ -87,15 +87,15 @@ export default function Footer() {
                 </div>
                 <div className="text-gray-400 text-sm space-y-3">
                   <p>
-                    <span className="text-white font-medium block mb-1">深圳总部：</span>
+                    <span className="text-white font-medium block mb-1">Shenzhen HQ:</span>
                     Room 1311, Dayunwan East Center, No. 359 Huangge Road, Longgang District, Shenzhen
                   </p>
                   <p>
-                    <span className="text-white font-medium block mb-1">香港办事处：</span>
+                    <span className="text-white font-medium block mb-1">Hong Kong Office:</span>
                     FLAT C, 9/F, WINNING HOUSE, NO.72-76, WING LOK STREET SHEUNG WAN, HONG KONG
                   </p>
                   <p>
-                    <span className="text-white font-medium block mb-1">美国分公司：</span>
+                    <span className="text-white font-medium block mb-1">USA Branch:</span>
                     5487 Blossom Acres Dr, San Jose, CA, 95124
                   </p>
                 </div>
@@ -124,9 +124,9 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>© 2026 PSC-tech. All rights reserved.</p>
           <div className="flex gap-8">
-            <Link href="/privacy" className="hover:text-white transition-colors">隐私政策</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">服务条款</Link>
-            <span>沪ICP备12345678号</span>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <span>ICP License 12345678</span>
           </div>
         </div>
       </div>

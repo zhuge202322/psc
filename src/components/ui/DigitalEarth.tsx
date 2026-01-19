@@ -304,7 +304,7 @@ export default function DigitalEarth() {
     <div className="relative w-full h-[600px] md:h-[800px] bg-[#020617] overflow-hidden">
       {/* 3D 场景 - 地球向右偏移 */}
       <div className="absolute inset-0 z-0 left-1/3">
-        <Canvas camera={{ position: [2.5, 0, 9.5], fov: 35 }}> 
+        <Canvas camera={{ position: [2.5, 0, 13.5], fov: 35 }}> 
           <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
           <ambientLight intensity={0.5} />
           

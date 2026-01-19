@@ -5,12 +5,12 @@ import Link from 'next/link';
 export const dynamic = 'force-dynamic';
 
 const STATIC_SERVICES = [
-  { id: 1, title: '供应链管理', desc: '全方位的供应链优化方案，从采购到配送的一站式管理。' },
-  { id: 2, title: '全球物流', desc: '覆盖全球的物流网络，提供海运、空运、陆运等多种运输方式。' },
-  { id: 3, title: '仓储配送', desc: '智能仓储系统，确保货物安全，提高配送效率。' },
-  { id: 4, title: '关务咨询', desc: '专业的关务团队，助您轻松应对各国复杂的进出口法规。' },
-  { id: 5, title: '采购执行', desc: '协助企业进行全球采购，严格把控产品质量与成本。' },
-  { id: 6, title: 'IT 系统集成', desc: '先进的物流信息系统，实现供应链全程可视化。' },
+  { id: 1, title: 'Supply Chain Management', desc: 'Comprehensive supply chain optimization solutions, one-stop management from procurement to distribution.' },
+  { id: 2, title: 'Global Logistics', desc: 'Global logistics network covering sea, air, and land transportation.' },
+  { id: 3, title: 'Warehousing & Distribution', desc: 'Smart warehousing systems ensuring cargo security and improving distribution efficiency.' },
+  { id: 4, title: 'Customs Consulting', desc: 'Professional customs team helping you easily navigate complex import/export regulations.' },
+  { id: 5, title: 'Procurement Execution', desc: 'Assisting enterprises with global procurement, strictly controlling product quality and costs.' },
+  { id: 6, title: 'IT Systems Integration', desc: 'Advanced logistics information systems achieving full supply chain visibility.' },
 ];
 
 const ICONS = ['🔍', '🛍️', '🏗️', '🎫', '🛡️', '🤝', '🚚', '📦', '✈️', '🚢'];
@@ -156,6 +156,30 @@ export default async function ServicesPage({ searchParams }: { searchParams: Pro
             </div>
         )}
       </div>
+
+      {/* Service Standards Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Service Standards</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                    { title: '1. Turnkey NPI for Complex Products', desc: 'We optimize early designs for mass production, managing everything from prototypes to DFMA manufacturing with 1000+ partners, plus testing, packaging, and logistics.' },
+                    { title: '2. Precision Custom Parts & Subassemblies', desc: 'We drive engineering, sourcing, reverse engineering, and BOM management for custom parts, ensuring the highest quality at the lowest cost.' },
+                    { title: '3. High-precision Prototyping and Development', desc: 'We develop and produce high-precision prototype samples according to project requirements for the verification of functionality, structure and safety.' },
+                    { title: '4. Industrial Design and Engineering Development', desc: 'We use professional software and expertise to digitally visualize our clients’ visionary product ideas on computers for them.' },
+                    { title: '5. Factory Identification & Audits & Final Inspection', desc: 'We qualify suppliers, audit and oversee your supply chain, implement custom quality plans, and provide in-house inspection and metrology services. All inspections, QA, and QC processes are carried out by degreed engineers.' },
+                    { title: '6. LOGISTICS', desc: 'As a 3PL, we manage global shipping, warehousing, kitting, JIT delivery, and support all Incoterms with preferential rates across all transportation modes.' },
+                    { title: '7. COMPLIANCE', desc: 'We create testing and compliance plans, certifying your products meet CE, FDA, NSF, UL, and other international standards.' },
+                    { title: '8. Flexible Production', desc: 'Targeting small-batch needs such as pilot production, market testing, and urgent replenishment orders. We deliver efficient and cost-competitive small-batch production services.' }
+                ].map((service, idx) => (
+                    <div key={idx} className="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <h3 className="text-xl font-bold text-teal-600 mb-3">{service.title}</h3>
+                        <p className="text-gray-600 leading-relaxed">{service.desc}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -7,9 +7,9 @@ export const dynamic = 'force-dynamic';
 
 // Fallback data
 const STATIC_INDUSTRIES = [
-  { id: '01', title: 'Consumer Electronics', desc: '针对高价值、短周期的电子产品，提供高安保标准的端到端物流方案，确保新品发布的时效性。', image: '' },
-  { id: '02', title: 'Automotive Parts', desc: '优化的零部件供应链网络，支持 JIT (Just-In-Time) 生产模式，降低库存成本，提升周转效率。', image: '' },
-  { id: '03', title: 'New Energy', desc: '专业的锂电池及光伏组件运输方案，符合 DG 危险品运输规范，提供全球合规的仓储与配送。', image: '' },
+  { id: '01', title: 'Consumer Electronics', desc: 'End-to-end logistics with high security standards for high-value, short-cycle electronic products, ensuring timely new product launches.', image: '' },
+  { id: '02', title: 'Automotive Parts', desc: 'Optimized parts supply chain network supporting JIT (Just-In-Time) production, reducing inventory costs and improving turnover efficiency.', image: '' },
+  { id: '03', title: 'New Energy', desc: 'Professional transport solutions for lithium batteries and PV modules, compliant with DG regulations, providing global warehousing and distribution.', image: '' },
   { id: '04', title: 'Apparel & Textiles', desc: 'Flexible fashion manufacturing. From fabric sourcing and pattern grading to fast-turnaround production.', image: '' },
   { id: '05', title: 'Medical Devices', desc: 'Strict compliance with medical regulations, temperature-controlled logistics for sensitive equipment.', image: '' },
 ];
@@ -132,6 +132,30 @@ export default async function SolutionsPage({ searchParams }: { searchParams: Pr
             </div>
         )}
       </div>
+
+      {/* Service Standards Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Service Standards</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                    { title: '1. Turnkey NPI for Complex Products', desc: 'We optimize early designs for mass production, managing everything from prototypes to DFMA manufacturing with 1000+ partners, plus testing, packaging, and logistics.' },
+                    { title: '2. Precision Custom Parts & Subassemblies', desc: 'We drive engineering, sourcing, reverse engineering, and BOM management for custom parts, ensuring the highest quality at the lowest cost.' },
+                    { title: '3. High-precision Prototyping and Development', desc: 'We develop and produce high-precision prototype samples according to project requirements for the verification of functionality, structure and safety.' },
+                    { title: '4. Industrial Design and Engineering Development', desc: 'We use professional software and expertise to digitally visualize our clients’ visionary product ideas on computers for them.' },
+                    { title: '5. Factory Identification & Audits & Final Inspection', desc: 'We qualify suppliers, audit and oversee your supply chain, implement custom quality plans, and provide in-house inspection and metrology services. All inspections, QA, and QC processes are carried out by degreed engineers.' },
+                    { title: '6. LOGISTICS', desc: 'As a 3PL, we manage global shipping, warehousing, kitting, JIT delivery, and support all Incoterms with preferential rates across all transportation modes.' },
+                    { title: '7. COMPLIANCE', desc: 'We create testing and compliance plans, certifying your products meet CE, FDA, NSF, UL, and other international standards.' },
+                    { title: '8. Flexible Production', desc: 'Targeting small-batch needs such as pilot production, market testing, and urgent replenishment orders. We deliver efficient and cost-competitive small-batch production services.' }
+                ].map((service, idx) => (
+                    <div key={idx} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <h3 className="text-xl font-bold text-teal-600 mb-3">{service.title}</h3>
+                        <p className="text-gray-600 leading-relaxed">{service.desc}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+      </section>
     </div>
   );
 }

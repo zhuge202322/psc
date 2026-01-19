@@ -143,7 +143,7 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
                                 href={`/news/${item.id}`} 
                                 className="inline-block bg-gradient-to-r from-teal-500 to-emerald-500 text-white text-sm px-6 py-2 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 w-fit"
                             >
-                                阅读更多
+                                Read More
                             </Link>
                         </div>
 

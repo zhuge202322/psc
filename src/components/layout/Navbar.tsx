@@ -24,12 +24,11 @@ export default function Navbar() {
   }, [pathname]);
 
   const navLinks = [
-    { name: '首页', href: '/' },
-    { name: '解决方案', href: '/solutions' },
-    { name: '服务项目', href: '/services' },
-    { name: '全球网络', href: '/network' },
-    { name: '行业资讯', href: '/news' },
-    { name: '关于我们', href: '/about' },
+    { name: 'Home', href: '/' },
+    { name: 'Solutions', href: '/solutions' },
+    { name: 'Services', href: '/services' },
+    { name: 'News', href: '/news' },
+    { name: 'About', href: '/about' },
   ];
 
   return (
@@ -76,7 +75,7 @@ export default function Navbar() {
                 : 'bg-white/10 text-white border border-white/20 hover:bg-white hover:text-[#020617]'
             }`}
           >
-            联系咨询
+            Contact Us
           </Link>
         </div>
 
@@ -131,7 +130,7 @@ export default function Navbar() {
                                 className="block w-full text-center py-4 bg-teal-500 text-white rounded-xl font-bold text-lg"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
-                                联系咨询
+                                Contact Us
                             </Link>
                         </motion.div>
                     </div>
