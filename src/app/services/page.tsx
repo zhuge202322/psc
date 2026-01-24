@@ -23,7 +23,7 @@ export const metadata = {
 export default async function ServicesPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
   const resolvedSearchParams = await searchParams;
   const currentPage = Number(resolvedSearchParams?.page) || 1;
-  const perPage = 9; // Grid layout usually fits more items
+  const perPage = 8; // Grid layout updated to 2 columns
 
   let displayItems = STATIC_SERVICES;
   let totalPages = 1;
@@ -31,17 +31,12 @@ export default async function ServicesPage({ searchParams }: { searchParams: Pro
   try {
     const { posts, totalPages: pages } = await getPaginatedPostsByCategory('fuwu', currentPage, perPage);
     
-    if (pages === 0) {
-        // Fallback to 'service' or 'services' if 'fuwu' returns nothing?
-        // For simplicity, we stick to 'fuwu' first.
-        // If empty, we might show static or try another call. 
-        // Let's assume 'fuwu' works as per homepage logic.
-    } else {
-        totalPages = pages;
+    if (pages > 0) {
+      totalPages = pages;
     }
 
     if (posts && posts.length > 0) {
-      displayItems = posts.map((post: any, index: number) => {
+      displayItems = posts.map((post: any) => {
         const desc = post.excerpt.rendered.replace(/<[^>]+>/g, '') || '';
         return {
           id: post.id,
@@ -55,7 +50,7 @@ export default async function ServicesPage({ searchParams }: { searchParams: Pro
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Page Header */}
       <div className="relative py-48 bg-gray-900 border-b border-gray-800 overflow-hidden">
         {/* Background Image */}
@@ -77,28 +72,25 @@ export default async function ServicesPage({ searchParams }: { searchParams: Pro
       </div>
 
       {/* Services Grid */}
-      <div className="container mx-auto px-4 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {displayItems.map((item, index) => (
+      <div className="container mx-auto px-4 py-20 max-w-6xl">
+        <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">ONE STOP SERVICE</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {displayItems.map((item) => (
                 <div 
                     key={item.id} 
-                    className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-teal-100"
+                    className="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex flex-col items-start h-full"
                 >
-                    <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:bg-teal-50 group-hover:scale-110 transition-all duration-300">
-                        {ICONS[index % ICONS.length]}
-                    </div>
-                    
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-teal-600 transition-colors">
+                    <h3 className="text-xl font-bold text-teal-600 mb-3">
                         {item.title}
                     </h3>
                     
-                    <p className="text-gray-500 leading-relaxed mb-8 min-h-[48px] line-clamp-3">
+                    <p className="text-gray-600 leading-relaxed mb-6 flex-grow">
                         {item.desc}
                     </p>
                     
                     <Link 
-                        href={`/services/${item.id}`} // Assuming detailed pages exist or point to contact
-                        className="inline-flex items-center text-teal-600 font-bold hover:text-teal-700"
+                        href={`/services/${item.id}`}
+                        className="inline-flex items-center text-teal-600 font-bold hover:text-teal-700 mt-auto"
                     >
                         Learn More
                         <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -156,30 +148,6 @@ export default async function ServicesPage({ searchParams }: { searchParams: Pro
             </div>
         )}
       </div>
-
-      {/* Service Standards Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Service Standards</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                    { title: '1. Turnkey NPI for Complex Products', desc: 'We optimize early designs for mass production, managing everything from prototypes to DFMA manufacturing with 1000+ partners, plus testing, packaging, and logistics.' },
-                    { title: '2. Precision Custom Parts & Subassemblies', desc: 'We drive engineering, sourcing, reverse engineering, and BOM management for custom parts, ensuring the highest quality at the lowest cost.' },
-                    { title: '3. High-precision Prototyping and Development', desc: 'We develop and produce high-precision prototype samples according to project requirements for the verification of functionality, structure and safety.' },
-                    { title: '4. Industrial Design and Engineering Development', desc: 'We use professional software and expertise to digitally visualize our clients’ visionary product ideas on computers for them.' },
-                    { title: '5. Factory Identification & Audits & Final Inspection', desc: 'We qualify suppliers, audit and oversee your supply chain, implement custom quality plans, and provide in-house inspection and metrology services. All inspections, QA, and QC processes are carried out by degreed engineers.' },
-                    { title: '6. LOGISTICS', desc: 'As a 3PL, we manage global shipping, warehousing, kitting, JIT delivery, and support all Incoterms with preferential rates across all transportation modes.' },
-                    { title: '7. COMPLIANCE', desc: 'We create testing and compliance plans, certifying your products meet CE, FDA, NSF, UL, and other international standards.' },
-                    { title: '8. Flexible Production', desc: 'Targeting small-batch needs such as pilot production, market testing, and urgent replenishment orders. We deliver efficient and cost-competitive small-batch production services.' }
-                ].map((service, idx) => (
-                    <div key={idx} className="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                        <h3 className="text-xl font-bold text-teal-600 mb-3">{service.title}</h3>
-                        <p className="text-gray-600 leading-relaxed">{service.desc}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-      </section>
     </div>
   );
 }
