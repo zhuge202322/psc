@@ -105,7 +105,7 @@ export default function Footer() {
                   📞
                 </div>
                 <span className="text-gray-400">
-                  +86-13802249796
+                  86+13632721370
                 </span>
               </li>
               <li className="flex gap-4">
@@ -113,7 +113,7 @@ export default function Footer() {
                   ✉️
                 </div>
                 <span className="text-gray-400">
-                  Chenjimmy2024@gmail.com
+                  jimmy@psc-tech.com
                 </span>
               </li>
             </ul>

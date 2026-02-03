@@ -47,10 +47,10 @@ export default async function AboutPage() {
       {/* Main Content Split Layout */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-            <div className="flex flex-col lg:flex-row gap-10 md:gap-16 items-start">
+            <div className="">
                 
-                {/* Left Column: Introduction & Choose Us */}
-                <div className="w-full lg:w-1/2">
+                {/* Main Content: Introduction & Choose Us */}
+                <div className="w-full max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold text-gray-900 mb-8 relative inline-block">
                         Who We Are
                         <span className="absolute bottom-0 left-0 w-full h-1 bg-teal-500 rounded-full"></span>
@@ -71,44 +71,6 @@ export default async function AboutPage() {
                         <p>More than a supply chain service provider—we’re your reliable, loyal partner on the business journey! From product inspiration to micron-level refinement of precision components, and on-time small-batch delivery, we leverage core strengths in technical expertise, flexible service, and stable quality to escort you through every critical node of product R&D and production.</p>
                         <p>With clients spanning dozens of countries worldwide—from small design studios to large renowned trading firms—we excel in the development and production of plastics, hardware, silicone, wood, textiles, and wooden products. Boasting abundant high-quality supply chain resources, we accurately align with the needs of overseas clients and designers, seamlessly connecting the entire workflow from conceptualization, material selection, and process optimization to prototype validation and mass production.</p>
                         <p>Drawing on our in-depth grasp of diverse material properties and mature supply chain system, we precisely solve industry pain points such as material compatibility, cost control, and quality assurance. No cumbersome coordination—our professional team provides end-to-end support, enabling you to effortlessly turn ideas into market-leading products that meet market demands. Empowered by our professional supply chain, idea realization becomes faster and market expansion more efficient!</p>
-                    </div>
-                    
-                    <div className="bg-teal-50 border-l-4 border-teal-500 p-8 my-10 rounded-r-xl shadow-sm">
-                        <h4 className="font-bold text-teal-900 mb-4 text-lg">One-stop Custom silicone, plastic & metal parts Manufacturer</h4>
-                        <ul className="list-disc list-inside space-y-2 text-teal-800 font-medium">
-                            <li>Over 20 years of customization experiences</li>
-                            <li>Full OEM&ODM solutions</li>
-                            <li>Mold design and mass production</li>
-                            <li>Low MOQ for maximum flexibility</li>
-                        </ul>
-                    </div>
-                </div>
-
-                {/* Right Column: Services (Replaces Mission/Vision) */}
-                <div className="w-full lg:w-1/2 lg:sticky lg:top-24">
-                    <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-                            <span className="w-2 h-8 bg-teal-500 rounded-full"></span>
-                            One-Stop Services
-                        </h3>
-                        
-                        <div className="space-y-6">
-                            {[
-                                { title: '1. Turnkey NPI for Complex Products', desc: 'We optimize early designs for mass production, managing everything from prototypes to DFMA manufacturing with 1000+ partners, plus testing, packaging, and logistics.' },
-                                { title: '2. Precision Custom Parts & Subassemblies', desc: 'We drive engineering, sourcing, reverse engineering, and BOM management for custom parts, ensuring the highest quality at the lowest cost.' },
-                                { title: '3. High-precision Prototyping and Development', desc: 'We develop and produce high-precision prototype samples according to project requirements for the verification of functionality, structure and safety.' },
-                                { title: '4. Industrial Design and Engineering Development', desc: 'We use professional software and expertise to digitally visualize our clients’ visionary product ideas on computers for them.' },
-                                { title: '5. Factory Identification & Audits & Final Inspection', desc: 'We qualify suppliers, audit and oversee your supply chain, implement custom quality plans, and provide in-house inspection and metrology services. All inspections, QA, and QC processes are carried out by degreed engineers.' },
-                                { title: '6. LOGISTICS', desc: 'As a 3PL, we manage global shipping, warehousing, kitting, JIT delivery, and support all Incoterms with preferential rates across all transportation modes.' },
-                                { title: '7. COMPLIANCE', desc: 'We create testing and compliance plans, certifying your products meet CE, FDA, NSF, UL, and other international standards.' },
-                                { title: '8. Flexible Production', desc: 'Targeting small-batch needs such as pilot production, market testing, and urgent replenishment orders. We deliver efficient and cost-competitive small-batch production services.' }
-                            ].map((service, idx) => (
-                                <div key={idx} className="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                                    <strong className="block text-teal-700 mb-2 font-bold">{service.title}</strong>
-                                    <p className="text-sm text-gray-600 leading-relaxed">{service.desc}</p>
-                                </div>
-                            ))}
-                        </div>
                     </div>
                 </div>
 
