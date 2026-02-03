@@ -5,6 +5,9 @@ import DigitalEarth from '@/components/ui/DigitalEarth';
 import IndustryItem from '@/components/ui/IndustryItem';
 import NewsCarousel from '@/components/ui/NewsCarousel';
 
+// Force dynamic rendering to ensure fresh data from WordPress
+export const dynamic = 'force-dynamic';
+
 // Fallback data in case API fails or is empty
 const STATIC_INDUSTRIES = [
   { id: '01', title: 'Consumer Electronics', name: 'Consumer Electronics', desc: 'End-to-end logistics with high security standards for high-value, short-cycle electronic products.', image: '/img/1.png' },
@@ -227,7 +230,7 @@ export default async function Home() {
                             </>
                         ) : (
                             <>
-                                <span className="text-2xl font-bold">更多 +</span>
+                                <span className="text-2xl font-bold">More +</span>
                                 <div className="w-10 h-1 bg-yellow-400 mt-4 transition-all group-hover:w-20" />
                             </>
                         )}
